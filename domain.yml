@@ -1,0 +1,101 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- datos_formulario:
+    use_entities: true
+- solicitarInfoSitioWeb:
+    use_entities: true
+- saludo:
+    use_entities: true
+- despedida:
+    use_entities: true
+- solicitarAtencionPersonal:
+    use_entities: true
+- negacion:
+    use_entities: true
+- solicitarInfoGeneral:
+    use_entities: true
+- afirmacion:
+    use_entities: true
+entities:
+- nombreFormulario
+- telefonoFormulario
+slots:
+  nombreFormulario:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  telefonoFormulario:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_saludo:
+  - text: Hola, ¿en qué puedo ayudarte?
+  utter_infoGeneral:
+  - buttons:
+    - payload: solicitarInfoSitioWeb
+      title: Sobre nosotros
+    - payload: solicitarInfoSitioWeb
+      title: Sitio web
+    - payload: solicitarInfoSitioWeb
+      title: Arrendamiento de equipo de computo
+    - payload: solicitarInfoSitioWeb
+      title: Información de pagos
+    - payload: solicitarAtencionPersonal
+      title: Atención personal
+    text: 'Puedo apoyarte con lo siguiente, solo selecciona una opción:'
+  utter_infoSitioWeb:
+  - text: Perfecto, te muestro la siguiente información... para más información visita nuestro [sitio web](https://uxdigital.com.mx/pagina-web/)
+  utter_continuar:
+  - text: ¿Hay algo más que pueda hacer por ti?
+  utter_negacionContinuar:
+  - text: Perfecto, estaré al pendiente si necesitas algo.
+  utter_despedida:
+  - text: ¡Hasta luego!
+  utter_ask_nombreFormulario:
+  - text: 'Por favor proporcionanos tu nombre:'
+  utter_ask_telefonoFormulario:
+  - text: 'Ahora tu número telefónico:'
+  utter_Formulario_validado:
+  - text: Los datos han sido enviados correctamente, nuestros operadores se pondrán en contacto lo más pronto posible contigo.
+  utter_ask_validarDatosFormulario:
+  - buttons:
+    - payload: afirmacion
+      title: Si
+    - payload: negacion
+      title: No
+    text: '¿Los datos 1ingresados son correctos? \n Nombre: {nombreFormulario} \n Telefóno: {telefonoFormulario}'
+actions:
+- utter_ask_validarDatosFormulario
+- utter_continuar
+- utter_despedida
+- utter_infoGeneral
+- utter_infoSitioWeb
+- utter_negacionContinuar
+- utter_nombreFormulario
+- utter_saludo
+- utter_telefonoFormulario
+- validacion_formulario
+- validarDatosFormulario
+forms:
+  form_contacto:
+    required_slots:
+      nombreFormulario:
+      - entity: nombreFormulario
+        type: from_entity
+      telefonoFormulario:
+      - entity: telefonoFormulario
+        type: from_entity
+e2e_actions: []

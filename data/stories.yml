@@ -1,0 +1,330 @@
+version: "2.0"
+stories:
+
+- story: ruta sitios web
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoGeneral
+  - action: utter_infoGeneral
+  - action: utter_continuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Continuar (Afirmativo)
+  steps:
+  - action: utter_continuar
+  - intent: afirmacion
+  - action: utter_infoGeneral
+  
+- story: Continuar (Negativo)
+  steps:
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_3
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_4
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoGeneral
+  - action: utter_infoGeneral
+  - action: utter_infoGeneral
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+
+- story: interactive_story_6
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoGeneral
+  - action: utter_infoGeneral
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: formulario
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+
+
+- story: interactive_story_1
+  steps:
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Pedro
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - slot_was_set:
+    - telefonoFormulario: '7712795866'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: validacion_formulario
+  - action: utter_ask_validarDatosFormulario
+  - intent: afirmacion
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoGeneral
+  - action: utter_infoGeneral
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - intent: datos_formulario
+    entities:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - action: validacion_formulario
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Pedro
+  - slot_was_set:
+    - nombreFormulario: Pedro
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - intent: datos_formulario
+    entities:
+    - telefonoFormulario: '7712795866'
+  - slot_was_set:
+    - telefonoFormulario: '7712795866'
+  - action: validacion_formulario
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - intent: datos_formulario
+    entities:
+    - telefonoFormulario: '7712795866'
+  - slot_was_set:
+    - telefonoFormulario: '7712795866'
+  - action: validacion_formulario
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - nombreFormulario: Mariana
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - intent: datos_formulario
+    entities:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - action: validacion_formulario
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: validacion_formulario
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoGeneral
+  - action: utter_infoGeneral
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: afirmacion
+  - action: utter_infoGeneral
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: validacion_formulario
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: solicitarInfoSitioWeb
+  - action: utter_infoSitioWeb
+  - action: utter_continuar
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+  - slot_was_set:
+    - requested_slot: nombreFormulario
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - nombreFormulario: Denisse
+  - slot_was_set:
+    - requested_slot: telefonoFormulario
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - telefonoFormulario: '7712041621'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: validacion_formulario
+  - action: utter_continuar
+  - intent: negacion
+  - action: utter_negacionContinuar
+  - intent: despedida
+  - action: utter_despedida

@@ -1,0 +1,26 @@
+version: "2.0"
+rules:
+
+- rule: Despedirse cuando se despidan
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Saludar cuando saluden
+  steps: 
+  - intent: saludo
+  - action: utter_saludo
+
+- rule: Activar formulario de contacto
+  steps:
+  - intent: solicitarAtencionPersonal
+  - action: form_contacto
+  - active_loop: form_contacto
+
+- rule: Enviar formulario
+  condition:
+  - active_loop: form_contacto
+  steps:
+  - action: form_contacto
+  - active_loop: null
+  - action: validarDatosFormulario

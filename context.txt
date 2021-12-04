@@ -1,0 +1,41 @@
+
+Usuario: Hola
+Bot: Hola, ¿en qué puedo ayudarte?
+
+        Usuario: Necesito información sobre los sitios web
+        Bot: Perfecto, te muestro la siguiente información... para más información visita nuestro sitio web https//uxdigital.com.mx
+
+        Bot: ¿Hay algo más que pueda hacer por ti?      
+        Usuario: No, gracias
+
+Bot: Perfecto, estaré al pendiente si necesitas akgo.
+Usuario: Adiós.
+Bot: ¡Hasta luego!
+
+***************************************** FORMULARIO ******************
+
+Usuario: Wenas
+Bot: Hola, ¿en qué puedo ayudarte?
+
+        Usuario: Apóyame porfa
+        Bot: Puedo apoyarte con lo siguiente, solo selecciona una opción:
+                Sobre nosotros
+                Sitio web
+                Arrendamiento de equipo de computo
+                Información de pago
+                Solicitar atención personalizada
+
+        Usuario: SELECCIONA ATENCIÓN PERSONALIZADA
+        Bot: Excelente, proporcionanos tu nombre por favor   
+        Usuario: Luis
+        Bot: Ahora tu número de teléfono
+        Usuario: 7712795866
+        Bot: Los datos han sido enviados correctamente, nuestros operadores se pondrán en contacto lo más pronto posible contigo.
+
+        Bot: ¿Hay algo más que pueda hacer por ti?
+        Usuario: No, así está bien
+
+        Bot: Perfecto, estaré al pendiente si necesitas akgo.
+        Usuario: Adiós.
+        Bot: ¡Hasta luego!
+

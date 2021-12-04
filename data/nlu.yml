@@ -1,0 +1,140 @@
+version: "2.0"
+nlu:
+- intent: saludo
+  examples: |
+    - Ey
+    - Hola
+    - Buenos días
+    - Buenas tardes
+    - Buenas noches
+    - Que gusto de verte
+    - Que hay de nuevo
+    - Que tal
+    - Que onda
+    - Ola
+    - Que me cuentas
+    - Tanto tiempo sin verte
+    - Es un placer saludarte
+    - Holaaa
+    - Wenas
+- intent: despedida
+  examples: |
+    - Hasta luego
+    - Hasta pronto
+    - Adiós
+    - Nos vemos luego
+    - Bonita noche
+    - Bye
+    - Nos vemos
+    - Ten un buen día
+    - Nos vemos pronto
+    - Hasta mañana
+    - Cuidate
+    - Gracias de antemano
+    - Agradecido por la atención
+    - Gracias, nos vemos.
+    - Hasta dentro de pronto
+    - Gracias, bonita tarde
+    - Buen día
+    - solicitarAtencionPersonal
+    - Gracias, nos vemos
+- intent: afirmacion
+  examples: |
+    - si
+    - s
+    - siii
+    - estás en lo correo
+    - por supuesto
+    - suena genial
+    - correcto
+    - adelante
+    - procede
+    - Por supuesto
+- intent: negacion
+  examples: |
+    - no
+    - n
+    - nunca
+    - no creo
+    - no me gusta esto
+    - de ninguna manera
+    - no realmente
+    - no estoy de acuerdo
+    - no, gracias
+    - No, gracias
+    - No Creo
+    - No, así está bien
+    - No, así estoy bien
+- intent: solicitarInfoGeneral
+  examples: |
+    - Necesito información por favor.
+    - Quiero información
+    - Necesito información
+    - Quiero información por favor
+    - ¿En qué me puedes ayudar?
+    - ¿Qué sabes?
+    - En qué me puedes ayudar
+    - Qué sabes
+    - Solicito información
+    - Ayúdame
+    - Resuélveme unas preguntas
+    - ¡Ayúdame!
+    - ¿Qué sugieres?
+    - Que sugieres
+    - Necesito informacion
+    - Apoyame
+    - Apoyame, por favor
+    - ¿En qué puedes ayudar?
+    - Ayudáme
+- intent: solicitarInfoSitioWeb
+  examples: |
+    - Necesito información acerca de sitios web por favor
+    - Necesito información acerca de páginas web por favor
+    - Quiero información acerca de sitios web por favor
+    - Quiero información acerca de páginas web por favor
+    - Sitios web
+    - Páginas web
+    - Sitio web
+    - Página web
+    - ¿Manejan sitios web?
+    - Ocupo información de sitios web
+    - solicitarInfoSitioWeb
+    - Necesito información sobre sitios web
+- intent: solicitarAtencionPersonal
+  examples: |
+    - Quiero una llamada con un asesor
+    - Necesito una llamada con un asesor
+    - Contacto
+    - Quiero contacto con un ejecutivo
+    - Necesito contacto con un ejecutivo
+    - Solicito atención personalizada
+    - Quiero atención personalizada
+    - Necesito atención personalizada
+    - Quiero solicitar una llamada para atención
+    - Quiero atención más personal
+    - Necesito atención más personal
+    - Solicito atención más personal
+    - Ocupo un operador
+    - Atención personalizada
+    - Quiero atención personal
+    - Necesito atención personal
+    - Solicito atención personal
+- intent: datos_formulario
+  examples: |
+    - Mi nombre es [José Luis Escobar Pérez](nombreFormulario)
+    - Me llamo [Pedro](nombreFormulario)
+    - [Evelyn](nombreFormulario)
+    - Soy [Mariana](nombreFormulario)
+    - Es [Denisse](nombreFormulario)
+    - Es [Marco](nombreFormulario) mi nombre
+    - [7712795866](telefonoFormulario)
+    - Es [7711059137](telefonoFormulario)
+    - Es [7712041621](telefonoFormulario) mi número
+    - [+52 55 102 030 40](telefonoFormulario)
+    - [653-210-5678](telefonoFormulario)
+    - Mi número es [5361548699](telefonoFormulario)
+    - Mi telefóno es [6256486577](telefonoFormulario)
+    - Mi número telefónico es [7711657932](telefonoFormulario)
+    - Es [7712041621](telefonoFormulario)
+    - Es [Denisse](nombreFormulario)
+    - Es [7712041621](telefonoFormulario)
